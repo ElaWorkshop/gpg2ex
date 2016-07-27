@@ -48,7 +48,7 @@ defmodule Gpg2ex do
 
   defp extract_key_id(lines) do
     lines
-    |> Enum.find(&(String.contains?(&1, "GOODSIG")))
+    |> Enum.find(&(String.contains?(&1, "VALIDSIG")))
     |> String.split()
     |> Enum.at(2)
   end
